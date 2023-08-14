@@ -7,6 +7,8 @@ function Smartphone(brand, model, ram) {
     }
 };
 const vinh = new Smartphone('Samsung', 'Note20', '8gb')
+const ps1 = new Smartphone('Iphone', '14 pro max', '6gb')
+const ps2 = new Smartphone('Sony', '1 mark V', '16gb')
 // const vinh = {
 //     brand: "Samsung",
 //     model: "Note20",
@@ -16,13 +18,13 @@ const vinh = new Smartphone('Samsung', 'Note20', '8gb')
 //     //     ${this.brand} ${this.model}`);
 //     // },
 // };
-// const person1 = {
+// var person1 = {
 //     brand: "Iphone",
 //     model: "14 pro max",
 //     ram: "6gb"
-//     // goTo: function(destination) {
-//     //     console.log(`Buy new one ${destination}`)
-//     // }
+    // goTo: function(destination) {
+    //     console.log(`Buy new one ${destination}`)
+    // }
 // };
 // const person2 = {
 //     brand: "Sony",
@@ -32,7 +34,8 @@ const vinh = new Smartphone('Samsung', 'Note20', '8gb')
 
 // othersmartphone.goTo()
 vinh.fulldevice()
-
+ps1.fulldevice()
+ps2.fulldevice()
 // const VinhSmartphone = new Smartphone("Samsung", "Note20");
 // console.log(VinhSmartphone.model);
 // const otherSmartphone = new Smartphone("Iphone", "13");
