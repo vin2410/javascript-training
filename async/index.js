@@ -32,3 +32,29 @@ function removeNeg(numbers, callback) {
     }
     return myArray;
 }
+
+// Callback
+function myfunction(param) {
+    if (typeof param === "function") {
+        param("Hoc callback");
+    }
+}
+
+function mycallback(value) {
+    console.log("Value: ", value);
+}
+
+myfunction(mycallback);
+
+//
+async function fetchData() {
+    try {
+        const response = await // await the promise to resolve
+        fetch("https://api.example.com/data");
+        // await another promise to resolve
+        const data = await response.json();
+        console.log(data); // do something with the data
+    } catch (error) {
+        console.error(error); // handle any errors
+    }
+}
