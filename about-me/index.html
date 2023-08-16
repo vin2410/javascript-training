@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .list-item {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>About Me</h1>
+        <ul>
+            <li>Nickname: <span id="nickname"></span></li>
+            <li>Favorites: <span id="favorites"></span></li>
+            <li>Hometown: <span id="hometown"></span></li>
+        </ul>
+        <script>
+            document.body.style.fontFamily = "Arial, sans-serif";
+            document.getElementById("nickname").innerHTML = "Vinh";
+            document.getElementById("favorites").innerHTML = "Sleep";
+            document.getElementById("hometown").innerHTML = "Da Nang, Viet Nam";
+            let items = document.getElementsByTagName("li");
+            let x = items.length;
+            for (let i = 0; i < x; i++) {
+                items[i].className = "list-item";
+            }
+            let myAvatar = document.createElement("img");
+            myAvatar.src = "./avatar.webp";
+            document.body.appendChild(myAvatar);
+        </script>
+    </body>
+</html>
