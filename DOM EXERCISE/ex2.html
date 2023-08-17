@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Exercise 2</title>
+    </head>
+    <body>
+        <form id="form">
+            <label> First name: <input type="text" name="firstname" /> </label>
+            <label> Last name: <input type="text" name="lastname" /> </label>
+            <button type="submit" onclick="getFormvalue()">Submit</button>
+        </form>
+        <script>
+            function getFormvalue() {
+                var x = document.getElementById("form");
+                console.log(x.length);
+                for (var i = 0; i < x.length; i++) {
+                    if (x.elements[i].value != "submit") {
+                        console.log(x.elements[i].value);
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

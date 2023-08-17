@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Exercise 4</title>
+    </head>
+    <body>
+        <a
+            id="w3r"
+            href="https://www.w3schools.com/js/default.asp"
+            hreflang="en"
+            rel="nofollow"
+            target=""
+            type="text/html"
+        >
+        </a>
+        <button onclick="getAttributes()">Click here to get attributes value</button>
+        <script>
+            function getAttributes() {
+                let x = document.getElementById("w3r");
+                alert("The value of the href attribute of the link is : " + x.href);
+                alert("The value of the hreflang attribute of the link is : " + x.hreflang);
+                alert("The value of the rel attribute of the link is : " + x.rel);
+                alert("The value of the taget attribute of the link is : " + x.target);
+                alert("The value of the type attribute of the link is : " + x.type);
+            }
+        </script>
+    </body>
+</html>
