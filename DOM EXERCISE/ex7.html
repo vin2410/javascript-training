@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Exercise 7</title>
+    </head>
+    <body>
+        <table id="myTable" border="1"></table>
+        <input type="button" onclick="createTable()" value="Create table" />
+        <script>
+            function createTable() {
+                row = parseInt(prompt("number of rows: "), 10);
+                col = parseInt(prompt("number of columns: "), 10);
+//                console.log(row);
+  //              console.log(typeof row);
+                for (var i = 0; i < row; i++) {
+                    x = document.getElementById("myTable").insertRow(i);
+                    for (var j = 0; j < col; j++) {
+                        x.insertCell(j).innerHTML = "row" + i + "col" + j;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

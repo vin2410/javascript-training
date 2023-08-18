@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise </title>
+</head>
+<body>
+    <form>
+        <p>Input radius value and get the volume of a sphere</p>
+        <label for="radius">Radius</label>
+        <input type="text" id="radius">
+        <label for="volume">Volume</label>
+        <input type="number" id="volume" value="0.0000">
+        <button type="submit" onclick="getCalculate()">Calculate</button>
+    </form>
+    <script>
+        function getCalculate() {
+            let radius = document.getElementById("radius").value;
+            let volume = (4/3) * Math.PI * Math.pow(radius, 3);
+            document.getElementById("volume").value = volume.toFixed(4);
+        }
+    </script>
+</body>
+</html>
