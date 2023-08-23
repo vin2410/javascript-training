@@ -1,7 +1,7 @@
 const form = document.getElementById("form");
-const fname = document.getElementById("fname");
+const username = document.getElementById("username");
 const email = document.getElementById("email");
-const phoneNumber = document.getElementById("phone");
+const phone = document.getElementById("phone");
 const content = document.getElementById("content");
 
 form.addEventListener("submit", (e) => {
@@ -9,53 +9,53 @@ form.addEventListener("submit", (e) => {
     validateInputs();
 });
 
-const setError = (input, message) => {
-    const formInfo = input.parentElement;
-    const errorDisplay = formInfo.querySelector("small");
-
-    errorDisplay.innerText = message;
+const setError = (element, message) => {
+    const formInfo = element.parentElement;
+    const errorMessage = formInfo.querySelector("p");
+    console.log(formInfo);
+    errorMessage.innerText = message;
     formInfo.className = "form-info error";
 };
 
 // Right form submit
-const setSuccess = (input) => {
-    const formInfo = input.parentElement;
+const setSuccess = (element) => {
+    const formInfo = element.parentElement;
     formInfo.className = "form-info success";
 };
 
 // Validation Email
-const isValidEmail = (email) => /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+const isEmail = (email) => /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+
 
 // Validation phone number
-const isValidPhoneNumber = (phoneNumber) => {
-    return /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/.test(phoneNumber);
-};
+
+const isPhone = (phone) => /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/.test(phone);
 
 const validateInputs = () => {
-    const fnameValue = fname.value.trim();
+    const usernameValue = username.value.trim();
     const emailValue = email.value.trim();
-    const phoneValue = phoneNumber.value.trim();
+    const phoneValue = phone.value.trim();
     const contentValue = content.value.trim();
 
-    if (fnameValue === "") {
-        setError(fname, "Please enter your full name");
+    if (usernameValue === "") {
+        setError(username, "Please enter your username");
     } else {
-        setSuccess(fname);
+        setSuccess(username);
     }
     if (emailValue === "") {
         setError(email, "Please enter your email");
-    } else if (isValidEmail(email)) {
-        setSuccess(email);
-    } else {
+    } else if (!isEmail(email)) {
         setError(email, "Please enter a valid email");
+    } else {
+        setSuccess(email);
     }
 
     if (phoneValue === "") {
-        setError(phoneNumber, "Please enter your phone number");
-    } else if (isValidPhoneNumber(phoneNumber)) {
-        setSuccess(phoneNumber);
+        setError(phone, "Please enter your phone number");
+    } else if (!isPhone(phone)) {
+        setError(phone, "Please enter a valid phone number");
     } else {
-        setError(phoneNumber, "Please enter a valid phone number");
+        setSuccess(phone);
     }
 
     if (contentValue === "") {

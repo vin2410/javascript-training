@@ -8,27 +8,27 @@
         <script defer src="index.js"></script>
     </head>
     <body>
-        <form id="form">
+        <form id="form" class="form">
             <h1 class="form__heading">Registration</h1>
             <div class="form-info">
-                <label for="name" class="form-info__label">Full Name</label>
-                <input type="text" class="form-info__input" id="fname" />
-                <small></small>
+                <label for="username" class="form-info__label">Username</label>
+                <input type="text" id="username" class="form-info__input" />
+                <p></p>
             </div>
             <div class="form-info">
                 <label for="email" class="form-info__label">Email</label>
-                <input type="email" class="form-info__input" id="email" />
-                <small></small>
+                <input type="email" id="email" class="form-info__input" />
+                <p></p>
             </div>
             <div class="form-info">
                 <label for="phone" class="form-info__label">Number Phone</label>
-                <input type="tel" class="form-info__input" id="phone" />
-                <small></small>
+                <input type="tel" id="phone" class="form-info__input" />
+                <p></p>
             </div>
             <div class="form-info">
                 <label for="content" class="form-info__label">Content</label>
                 <textarea id="content" class="form-info__input"></textarea>
-                <small></small>
+                <p></p>
             </div>
             <button type="submit" class="form__button">Submit</button>
         </form>

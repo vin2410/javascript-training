@@ -50,12 +50,12 @@ body {
     cursor: pointer;
 }
 
-.form-info small {
+.form-info p {
 	color: #e74c3c;
 	visibility: hidden;
 }
 
-.form-info.error small {
+.form-info.error p {
 	visibility: visible;
 }
 
