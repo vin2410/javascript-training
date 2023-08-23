@@ -10,7 +10,7 @@ body {
     color: #e6edf3;
     display: flex;
 }
-.form {
+#form {
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -46,6 +46,31 @@ body {
 .form-info__input::placeholder {
     font-size: 11px;
 }
+.form__button:hover {
+    cursor: pointer;
+}
+
+.form-info small {
+	color: #e74c3c;
+	visibility: hidden;
+}
+
+.form-info.error small {
+	visibility: visible;
+}
+
+.form-info input::forcus {
+    outline: 0;
+}
+
+.form-info.success input {
+    border-color: #2ecc71;
+}
+
+.form-info.error input {
+    border-color: #e74c3c;
+}
+
 .form__button {
     color: #e6edf3;
     width: 90%;
@@ -57,21 +82,4 @@ body {
     margin-top: 20px;
     margin-bottom: 40px;
     border-radius: 6px;
-}
-.form__button:hover {
-    cursor: pointer;
-}
-.form-info input::forcus {
-    outline: 0;
-}
-.form-info.success input {
-    border-color: #09c372;
-}
-.form-info.error input {
-    border-color: #ff3860;
-}
-.form-info.error {
-    color: #ff3860;
-    font-size: 9px;
-    height: 13px;
 }

@@ -6,41 +6,32 @@ const content = document.getElementById("content");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-
     validateInputs();
 });
 
-var setError = (element, message) => {
-    const formInfo = element.parentElement;
-    const errorDisplay = formInfo.querySelector(".error");
+const setError = (input, message) => {
+    const formInfo = input.parentElement;
+    const errorDisplay = formInfo.querySelector("small");
 
     errorDisplay.innerText = message;
-    formInfo.classList.add("error");
-    formInfo.classList.remove("success");
-    return formInfo;
+    formInfo.className = "form-info error";
 };
 
-var setSuccess = (element) => {
-    const formInfo = element.parentElement;
-    const errorDisplay = formInfo.querySelector(".error");
-
-    errorDisplay.innerText = "";
-    formInfo.classList.add("success");
-    formInfo.classList.remove("error");
-    return formInfo;
+// Right form submit
+const setSuccess = (input) => {
+    const formInfo = input.parentElement;
+    formInfo.className = "form-info success";
 };
 
-var isValidEmail = (email) => {
-    const regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
-    return regex.test(email);
+// Validation Email
+const isValidEmail = (email) => /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+
+// Validation phone number
+const isValidPhoneNumber = (phoneNumber) => {
+    return /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/.test(phoneNumber);
 };
 
-var isValidPhoneNumber = (phoneNumber) => {
-    const regex = new RegExp("[0-9]{10}");
-    return regex.test(phoneNumber);
-};
-
-var validateInputs = () => {
+const validateInputs = () => {
     const fnameValue = fname.value.trim();
     const emailValue = email.value.trim();
     const phoneValue = phoneNumber.value.trim();
