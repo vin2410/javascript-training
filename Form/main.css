@@ -10,7 +10,7 @@ body {
     color: #e6edf3;
     display: flex;
 }
-#form {
+.form {
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -27,26 +27,27 @@ body {
     row-gap: 10px;
     margin: 10px 20px;
     align-self: center;
+    font-size: 14px;
 }
 
-.form__heading {
+.form-heading {
     margin-top: 40px;
 }
 
-.form-info__label {
-    font-size: 14px;
-}
-.form-info__input {
+.form-info input,
+.form-info textarea {
     color: #e6edf3;
-    height: 30px;
-    padding-left: 10 px;
+    height: 40px;
+    text-indent: 11px;
     border: 1px solid #21262d;
     background-color: #0d1117;
 }
-.form-info__input::placeholder {
+
+.form-info input::placeholder {
     font-size: 11px;
 }
-.form__button:hover {
+
+button:hover {
     cursor: pointer;
 }
 
@@ -63,15 +64,15 @@ body {
     outline: 0;
 }
 
-.form-info.success input {
-    border-color: #2ecc71;
-}
-
-.form-info.error input {
+.error input {
     border-color: #e74c3c;
 }
 
-.form__button {
+.success input {
+    border-color: #2ecc71;
+}
+
+button {
     color: #e6edf3;
     width: 90%;
     font-size: 14px;
