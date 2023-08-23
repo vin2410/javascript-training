@@ -16,8 +16,6 @@ const validateInputs = () => {
     const phoneValue = phone.value.trim();
     const contentValue = content.value.trim();
 
-    console.log(emailValue);
-
     if (usernameValue === "") {
         setError(username, "Please enter your username");
     } else {
@@ -26,7 +24,7 @@ const validateInputs = () => {
 
     if (emailValue === "") {
         setError(email, "Please enter your email");
-    } else if (!isEmail(email)) {
+    } else if (!isEmail(emailValue)) {
         setError(email, "Please enter a valid email");
     } else {
         setSuccess(email);
@@ -34,7 +32,7 @@ const validateInputs = () => {
 
     if (phoneValue === "") {
         setError(phone, "Please enter your phone number");
-    } else if (!isPhone(phone)) {
+    } else if (!isPhone(phoneValue)) {
         setError(phone, "Please enter a valid phone number");
     } else {
         setSuccess(phone);
