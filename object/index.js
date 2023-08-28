@@ -9,6 +9,8 @@ function Smartphone(brand, model, ram) {
 const vinh = new Smartphone('Samsung', 'Note20', '8gb')
 const ps1 = new Smartphone('Iphone', '14 pro max', '6gb')
 const ps2 = new Smartphone('Sony', '1 mark V', '16gb')
+
+console.log(Smartphone);
 // const vinh = {
 //     brand: "Samsung",
 //     model: "Note20",

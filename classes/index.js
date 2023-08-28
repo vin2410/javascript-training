@@ -36,4 +36,4 @@ console.log(Kawasakiz1000);
 console.log(Bmws1000rr);
 console.log(Cbr1000rrr);
 console.log(Kawasakiz1000.print())
-    
+console.log(Motorbikes.valueOf();
