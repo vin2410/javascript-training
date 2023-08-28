@@ -2,15 +2,14 @@ const form = document.getElementById("form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
-const content = document.getElementById("content");
+const content = document.getElementById("description");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    validateInputs();
+    validateForms();
 });
 
-// Main function
-const validateInputs = () => {
+const validateForms = () => {
     const usernameValue = username.value.trim();
     const emailValue = email.value.trim();
     const phoneValue = phone.value.trim();
@@ -44,12 +43,10 @@ const validateInputs = () => {
         setSuccess(content);
     }
 };
-
 // Input error
 const setError = (element, message) => {
     const formInfo = element.parentElement;
     const errorMessage = formInfo.querySelector("p");
-    console.log(formInfo);
     errorMessage.innerText = message;
     formInfo.className = "form-info error";
 };
@@ -57,13 +54,14 @@ const setError = (element, message) => {
 // Input success
 const setSuccess = (element) => {
     const formInfo = element.parentElement;
-    console.log(formInfo);
     formInfo.className = "form-info success";
 };
 
 // Validation Email
 const isEmail = (email) =>
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        email
+    );
 
 // Validation phone number
 const isPhone = (phone) => /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/.test(phone);

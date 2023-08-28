@@ -8,27 +8,27 @@
         <script defer src="index.js"></script>
     </head>
     <body>
-        <form id="form" class="form">
+        <form id="form" class="form" onchange="validateForms()">
             <h1 class="form-heading">Registration</h1>
             <div class="form-info">
                 <label for="username">Username</label>
                 <input type="text" id="username" />
-                <p>Error Message</p>
+                <p></p>
             </div>
             <div class="form-info">
                 <label for="email">Email</label>
-                <input type="email" id="email" />
-                <p>Error Message</p>
+                <input type="email" id="email" onchange="isEmail()"/>
+                <p></p>
             </div>
             <div class="form-info">
                 <label for="phone">Number Phone</label>
-                <input type="tel" id="phone" />
-                <p>Error Message</p>
+                <input type="tel" id="phone" onchange="isPhone()"/>
+                <p></p>
             </div>
             <div class="form-info">
-                <label for="content">Description</label>
-                <textarea id="content"></textarea>
-                <p>Error Message</p>
+                <label for="description">Description</label>
+                <textarea id="description"></textarea>
+                <p></p>
             </div>
             <button type="submit">Submit</button>
         </form>
