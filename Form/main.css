@@ -34,8 +34,7 @@ body {
     margin-top: 40px;
 }
 
-.form-info input,
-.form-info textarea {
+.form-info input {
     color: #e6edf3;
     height: 40px;
     text-indent: 11px;
@@ -52,12 +51,12 @@ button:hover {
 }
 
 .form-info p {
-	color: #e74c3c;
-	visibility: hidden;
+    color: #e74c3c;
+    visibility: hidden;
 }
 
 .form-info.error p {
-	visibility: visible;
+    visibility: visible;
 }
 
 .form-info input::forcus {
