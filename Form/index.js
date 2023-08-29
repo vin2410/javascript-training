@@ -1,4 +1,4 @@
-// New way with object
+// Create a object formField 
 const formField = {
     username: {
         key: "username",
@@ -22,6 +22,7 @@ const formField = {
     },
 };
 
+// Validate form 
 const validateForm = (event) => {
     event.preventDefault();
     const errors = {};
@@ -44,7 +45,6 @@ const validateForm = (event) => {
             errorElement.textContent = "";
         }
     }
-    console.log(errors);
 
     if (Object.keys(errors).length > 0) {
         displayErrors(errors);
@@ -53,6 +53,7 @@ const validateForm = (event) => {
     }
 };
 
+// Display errors 
 const displayErrors = (errors) => {
     for (let field in errors) {
         const inputElement = document.getElementById(field);
