@@ -20,21 +20,21 @@
 
 Todo App allows user to manage Group, List and Task
 
-User can: 
-    - Create Group
-    - Rename Group
-    - Delete Group
-User can:
-    - Create List included in a Group
-    - Rename List
-    - Delete List
-User can create Tasks:
-    - User can click on Add a Task button to open a Add Task Form (Title, Description, Due date: datepicker)
-    - Form Validation: Required all fields, Submit button must disabled for invalid form
-User can edit Task:
-    - User can click on the Edit icon on each Task to open Edit Modal
-    - Delete task  by click on the Delete icon, show confirmation modal,
-    - Task details modal
+- User can:
+  - Create Group
+  - Rename Group
+  - Delete Group
+- User can:
+  - Create List included in a Group
+  - Rename List
+  - Delete List
+- User can create Tasks:
+  - User can click on Add a Task button to open a Add Task Form (Title, Description, Due date: datepicker)
+  - Form Validation: Required all fields, Submit button must disabled for invalid form
+- User can edit Task:
+  - User can click on the Edit icon on each Task to open Edit Modal
+  - Delete task by click on the Delete icon, show confirmation modal,
+  - Task details modal
 
 ## Folder structure
 
@@ -54,7 +54,7 @@ User can edit Task:
 │   │   ├── layouts/
 │   └── index.html
 └── .editorconfig
-└── .gitignore  
+└── .gitignore
 └── package.json
 └── README.md
 ```
