@@ -1,0 +1,12 @@
+body {
+    font-family: var(--ff-primary);
+    color: var(--color-text-primary);
+}
+
+.main-page {
+    display: flex;
+}
+
+h1 {
+    font-size: var(--fs-large);
+}

@@ -1,0 +1,12 @@
+:root {
+    --ff-primary: 'Segoe UI Regular';
+
+    --fs-large: 20px;
+    --fs-normal: 14px;
+
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #78bafd;
+
+    --color-bg-primary: #11100f;
+    --color-bg-secondary: #252423;
+}
