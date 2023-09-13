@@ -6,6 +6,7 @@ input {
     color: var(--color-text-primary);
     font-size: var(--fs-small);
 }
+
 input:focus {
     outline: none;
 }

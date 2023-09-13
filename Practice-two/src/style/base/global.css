@@ -11,7 +11,3 @@ body {
 .main-page {
     display: flex;
 }
-
-h1 {
-    font-size: var(--fs-large);
-}
