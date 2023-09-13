@@ -1,12 +1,18 @@
 .left-column {
     background-color: var(--color-bg-secondary);
-    width: 300px;
     height: 100vh;
 }
 
 .side-bar-addlist {
-    display: flex;
+    display: grid;
+    grid-template-columns: 20% auto 20%;
     position: fixed;
     bottom: 0;
     color: var(--color-text-primary);
+}
+
+.group-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
 }
