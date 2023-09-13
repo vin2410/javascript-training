@@ -5,4 +5,17 @@
 }
 .side-bar-addlist {
     display: flex;
+    position: fixed;
+    bottom: 0;
+    color: var(--color-text-primary);
+}
+
+.group-item__list,
+.group-item {
+    display: flex;
+    align-self: center;
+    padding: 12px 24px;
+}
+.group-item__list {
+    margin-left: 22px;
 }

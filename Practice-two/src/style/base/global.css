@@ -3,6 +3,11 @@ body {
     color: var(--color-text-primary);
 }
 
+.container {
+    width: auto;
+    height: auto;
+}
+
 .main-page {
     display: flex;
 }

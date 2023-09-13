@@ -4,27 +4,63 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Todo App</title>
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+            crossorigin="anonymous"
+        />
         <link rel="stylesheet" href="./style/main.css" />
     </head>
     <body>
         <main class="container">
-            <div class="main-page">
+            <section class="main-page">
                 <div class="left-column">
                     <ul>
                         <li>
-                            <div class="group-item">Untitled group</div>
-                            <div class="group-item-list">Untitled list</div>
+                            <div class="group-item">
+                                <span class="icon icon-list"></span>
+                                <input type="text" class="group" readonly value="Untitled group" />
+                            </div>
+                            <div class="group-item__list">
+                                <span class="icon icon-menu"></span>
+                                <input type="text" class="list" readonly value="Untitled list" />
+                            </div>
                         </li>
                     </ul>
                     <div class="side-bar-addlist">
                         <button>
-                            <img src="./assets/images/plus.svg" alt="Add list" />
+                            <span class="icon icon-plus"></span>
                         </button>
                         <input type="text" placeholder="New list" />
                     </div>
                 </div>
-                <div class="center-column"></div>
-            </div>
+                <div class="center-column">
+                    <div class="center-column__list group-item__list">
+                        <input type="text" class="list" readonly value="Untitled list" />
+                    </div>
+                    <ul class="center-column__task">
+                        <li>
+                            <button>
+                                <span class="icon-plus"></span>
+                            </button>
+                            <input type="text" placeholder="Add a Task" />
+                        </li>
+                        <li>
+                            <button>
+                                <span class="icon-checkmark"></span>
+                            </button>
+                            <input type="text" value="Create main page" readonly />
+                            <button>
+                                <span class="icon-pencil"></span>
+                            </button>
+                            <button>
+                                <span class="icon-bin"></span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </section>
         </main>
     </body>
 </html>

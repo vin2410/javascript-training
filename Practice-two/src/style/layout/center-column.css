@@ -2,3 +2,15 @@
     width: 100%;
     background-color: var(--color-bg-primary);
 }
+.center-column__list .list {
+    color: var(--color-text-secondary);
+    font-size: var(--fs-large);
+}
+.center-column__task {
+    background-color: var(--color-bg-secondary);
+    margin: 0 16px;
+    color: var(--color-text-secondary);
+}
+.center-column__task button {
+    color: var(--color-text-secondary);
+}

@@ -4,11 +4,12 @@
 @import url(./base/global.css);
 
 /* abstract */
-@import url(./abstract/variable.css);
+@import url(./abstract/variables.css);
 
 /* components */
 @import url(./component/button.css);
 @import url(./component/input.css);
+@import url(./component/img.css);
 
 /* layouts */
 @import url(./layout/left-column.css);

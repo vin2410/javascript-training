@@ -1,0 +1,6 @@
+.icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-primary);
+    align-self: center;
+}
