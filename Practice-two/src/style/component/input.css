@@ -1,6 +1,6 @@
 input {
     border: 0;
-    height: 30px;
+    height: 50px;
     background-color: transparent;
     text-indent: var(--fs-normal);
     color: var(--color-text-primary);
