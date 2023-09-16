@@ -5,7 +5,8 @@
 }
 
 .side-bar-addlist {
-    display: flex;
+    display: grid;
+    grid-template-columns: 20% auto 20%;
     position: fixed;
     bottom: 0;
     color: var(--color-text-primary);
@@ -14,10 +15,18 @@
 .group-item__list,
 .group-item {
     display: flex;
-    align-self: center;
+    align-items: center;
     padding: 12px 24px;
 }
 
 .group-item__list {
     margin-left: 22px;
+}
+
+.group-item__list:hover {
+    background-color: var(--color-bg-primary);
+}
+
+.group-item {
+    cursor: pointer;
 }
