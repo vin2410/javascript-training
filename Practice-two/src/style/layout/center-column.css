@@ -2,3 +2,27 @@
     width: 100%;
     background-color: var(--color-bg-primary);
 }
+
+.center-column__list .list {
+    color: var(--color-text-secondary);
+    font-size: var(--fs-large);
+}
+
+.center-column__task {
+    color: var(--color-text-secondary);
+    display: flex;
+    flex-direction: column;
+    margin: 0 16px;
+    row-gap: 8px;
+}
+
+.center-column__task li {
+    background-color: var(--color-bg-secondary);
+    display: grid;
+    grid-template-columns: 20px auto 20px 20px;
+    column-gap: 8px;
+}
+
+.center-column__task button {
+    color: var(--color-text-secondary);
+}
