@@ -5,8 +5,8 @@ class ApiRequest {
     }
 
     // Get method
-    getGroup = (id) => {
-        return this.sendRequest(`${this.path}/${id}`, 'GET');
+    getGroup = () => {
+        return this.sendRequest(`${this.path}`, 'GET');
     };
 
     // Post method

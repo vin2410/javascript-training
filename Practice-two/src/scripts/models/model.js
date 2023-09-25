@@ -1,8 +1,8 @@
-import Groups from './groups';
+import Group from './group';
 
 class Model {
     constructor() {
-        this.group = new Groups();
+        this.group = new Group();
     }
 }
 

@@ -4,11 +4,15 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "parcel src/index.html",
+        "build": "parcel build src/index.html",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "author": "Vinh Le",
     "license": "ISC",
     "devDependencies": {
-        "eslint": "^8.49.0"
+        "eslint": "^8.49.0",
+        "parcel": "^2.9.3"
     }
 }

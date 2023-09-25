@@ -1,10 +1,10 @@
-import ApiService from '../services/apiService';
-class Group {
-    constructor(data) {
-        this.id = data.id;
-        this.title = data.title;
-        this.lists = data.lists;
-    }
-}
+import apiService from '../services/apiService';
 
+class Group {
+    constructor() {
+        this.service = apiService;
+    }
+
+    getGroupList = () => this.service.getGroup();
+}
 export default Group;

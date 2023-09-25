@@ -6,7 +6,6 @@ class Controller {
 
     init = async () => {
         await this.initGroups();
-        this.initModal();
     };
 
     // Group controller //
@@ -14,7 +13,15 @@ class Controller {
         try {
             await this.model.group.init();
         } catch {
-            alert('Failed to initialize');
+            alert('Could not init');
+        }
+    };
+
+    getGroupList = async () => {
+        try {
+            await this.model.group.getGroupList();
+        } catch {
+            alert('failed to get group list');
         }
     };
 }
