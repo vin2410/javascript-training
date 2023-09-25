@@ -1,0 +1,12 @@
+.left-column {
+    background-color: var(--color-bg-secondary);
+    width: 300px;
+    height: 100vh;
+}
+
+.side-bar-addlist {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    color: var(--color-text-primary);
+}

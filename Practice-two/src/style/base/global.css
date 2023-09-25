@@ -1,0 +1,13 @@
+body {
+    font-family: var(--ff-primary);
+    color: var(--color-text-primary);
+}
+
+.container {
+    width: auto;
+    height: auto;
+}
+
+.main-page {
+    display: flex;
+}

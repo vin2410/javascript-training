@@ -1,0 +1,12 @@
+input {
+    border: 0;
+    height: 50px;
+    background-color: transparent;
+    text-indent: var(--fs-normal);
+    color: var(--color-text-primary);
+    font-size: var(--fs-small);
+}
+
+input:focus {
+    outline: none;
+}
