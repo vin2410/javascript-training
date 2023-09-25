@@ -9,7 +9,7 @@
 /* components */
 @import url(./component/button.css);
 @import url(./component/input.css);
-@import url(./component/img.css);
+@import url(./component/icon.css);
 
 /* layouts */
 @import url(./layout/left-column.css);
