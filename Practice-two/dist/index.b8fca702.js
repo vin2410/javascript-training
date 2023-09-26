@@ -574,17 +574,18 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"3cYfC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _app = require("./app");
+var _appDefault = parcelHelpers.interopDefault(_app);
 // Sure that scripts called after DOM loaded
 document.addEventListener("DOMContentLoaded", ()=>{
-    const myApp = new (0, _app.App)();
+    const myApp = new (0, _appDefault.default)();
     myApp.start();
 });
 
-},{"./app":"bAabt"}],"bAabt":[function(require,module,exports) {
+},{"./app":"bAabt","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bAabt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "App", ()=>App);
 var _model = require("./models/model");
 var _modelDefault = parcelHelpers.interopDefault(_model);
 var _view = require("./views/view");
@@ -602,20 +603,26 @@ class App {
         await controller.init();
     }
 }
+exports.default = App;
 
 },{"./models/model":"cyUWG","./views/view":"2i4RU","./controllers/controller":"e0sIE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cyUWG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _group = require("./group");
-var _groupDefault = parcelHelpers.interopDefault(_group);
-class Model {
+var _apiService = require("../services/apiService");
+class Group {
     constructor(){
-        this.group = new (0, _groupDefault.default)();
+        this.groups = [];
     }
+    getGroupModel = ()=>{
+        return (0, _apiService.getGroup)().then((response)=>{
+            this.groups = response;
+            return response;
+        });
+    };
 }
-exports.default = Model;
+exports.default = Group;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./group":"4FJGT"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../services/apiService":"i8gPH"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -645,131 +652,84 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"4FJGT":[function(require,module,exports) {
+},{}],"i8gPH":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _apiService = require("../services/apiService");
-var _apiServiceDefault = parcelHelpers.interopDefault(_apiService);
-class Group {
-    constructor(){
-        this.service = (0, _apiServiceDefault.default);
-    }
-    getGroupList = ()=>this.service.getGroup();
-}
-exports.default = Group;
-
-},{"../services/apiService":"i8gPH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"i8gPH":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getGroup", ()=>getGroup);
+parcelHelpers.export(exports, "postItem", ()=>postItem);
+parcelHelpers.export(exports, "patchItem", ()=>patchItem);
+parcelHelpers.export(exports, "deleteItem", ()=>deleteItem);
 var _urls = require("../constants/urls");
-var _apiRequest = require("../helpers/apiRequest");
-var _apiRequestDefault = parcelHelpers.interopDefault(_apiRequest);
-class ApiService {
-    constructor(){
-        this.apiService = new (0, _apiRequestDefault.default)((0, _urls.API_BASE_URL), "/groups");
-    }
-    getGroupList = async ()=>{
-        const data = await this.sendRequest.getGroup();
-        return data;
-    };
-}
-exports.default = ApiService;
+const sendRequest = async (path, method, body)=>{
+    const url = `${(0, _urls.API_BASE_URL)}/${path}`;
+    const response = await fetch(url, {
+        method,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body)
+    });
+    if (response) return await response.json();
+    else throw new Error("Error while sending request");
+};
+const getGroup = ()=>{
+    return sendRequest(`${(0, _urls.PATH)}`, "GET");
+};
+const postItem = (id, data)=>{
+    return sendRequest(`${(0, _urls.PATH)}/${id}`, "POST", data);
+};
+const patchItem = (id, data)=>{
+    return sendRequest(`${(0, _urls.PATH)}/${id}`, "PATCH", data);
+};
+const deleteItem = (id)=>{
+    return sendRequest(`${(0, _urls.PATH)}/${id}`, "DELETE");
+};
 
-},{"../constants/urls":"8HxS9","../helpers/apiRequest":"4XVvx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8HxS9":[function(require,module,exports) {
+},{"../constants/urls":"8HxS9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8HxS9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "API_BASE_URL", ()=>API_BASE_URL);
+parcelHelpers.export(exports, "PATH", ()=>PATH);
 const API_BASE_URL = "https://64fb3936cb9c00518f7ad090.mockapi.io";
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4XVvx":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-class ApiRequest {
-    constructor(baseUrl, path){
-        this.baseUrl = baseUrl;
-        this.path = path;
-    }
-    // Get method
-    getGroup = ()=>{
-        return this.sendRequest(`${this.path}`, "GET");
-    };
-    // Post method
-    postItem = (data)=>{
-        return this.sendRequest(`${this.path}`, "POST", data);
-    };
-    // Patch method
-    patchItem = (id, data)=>{
-        return this.sendRequest(`${this.path}/${id}`, "PATCH", data);
-    };
-    // Delete method
-    deleteItem = (id)=>{
-        return this.sendRequest(`${this.path}/${id}`, "DELETE");
-    };
-    sendRequest = async (path, method, body)=>{
-        const url = `${this.baseUrl}${path}`;
-        const response = await fetch(url, {
-            method,
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(body)
-        });
-        if (response.ok) return await response.json();
-        else throw new Error("Error while sending request");
-    };
-}
-exports.default = ApiRequest;
+const PATH = "groups";
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2i4RU":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _groupView = require("./groupView");
-var _groupViewDefault = parcelHelpers.interopDefault(_groupView);
-class View {
-    constructor(){
-        this.group = new (0, _groupViewDefault.default)();
-    }
-}
-exports.default = View;
-
-},{"./groupView":"lNTTl","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lNTTl":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
 var _templates = require("../templates/templates");
 var _templatesDefault = parcelHelpers.interopDefault(_templates);
-class GroupView {
+class View {
     constructor(){
-        this.groupListEl = document.querySelector(".left-column__group");
+        this.groupListEl = document.querySelectorAll(".left-column__group");
     }
-    renderGroupList = (groups)=>{
-        this.groupListEl.innerHTML = "";
+    renderGroupList = async (groups)=>{
         groups.forEach((group)=>{
             this.renderGroup(group);
         });
     };
     renderGroup = (group)=>{
         const groupTemplate = (0, _templatesDefault.default).renderGroup(group);
-        this.groupListEl.innerHTML += groupTemplate;
+        this.groupListEl.appendChild(groupTemplate);
     };
 }
-exports.default = GroupView;
+exports.default = View;
 
-},{"../templates/templates":"8t1Sm","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8t1Sm":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../templates/templates":"8t1Sm"}],"8t1Sm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 class Template {
     constructor(){}
     static renderGroup = (group)=>`
-            <li>
-                <div class="group-item">
-                    <span class="icon icon-list"></span>
-                    <input type="text" class="group" readonly value=${group.title}/>
-                </div>
-                <div class="group-item__list">
-                    <span class="icon icon-menu"></span>
-                    <input type="text" class="list" readonly value=${group.list.name} />
-                </div>
-            </li>
+                <li>
+                    <div class="group-item">
+                        <span class="icon icon-list"></span>
+                        <input type="text" class="group" readonly value=${group.title}/>
+                    </div>
+                    <div class="group-item__list">
+                        <span class="icon icon-menu"></span>
+                        <input type="text" class="list" readonly value=${group.list.name} />
+                    </div>
+                </li>
         `;
 }
 exports.default = Template;
@@ -783,21 +743,14 @@ class Controller {
         this.view = view;
     }
     init = async ()=>{
-        await this.initGroups();
-    };
-    // Group controller //
-    initGroups = async ()=>{
-        try {
-            await this.model.group.init();
-        } catch  {
-            alert("Could not init");
-        }
+        await this.getGroupList();
     };
     getGroupList = async ()=>{
         try {
-            await this.model.group.getGroupList();
+            const response = await this.model.group.getGroupModel();
+            this.view.renderGroupList(response);
         } catch  {
-            alert("failed to get group list");
+            alert("Couldn't get group list");
         }
     };
 }

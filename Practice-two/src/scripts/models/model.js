@@ -1,9 +1,13 @@
-import Group from './group';
+import { getGroup } from '../services/apiService';
 
-class Model {
+export default class Model {
     constructor() {
-        this.group = new Group();
+        this.groups = [];
     }
+    getGroupModel = () => {
+        return getGroup().then((response) => {
+            this.groups = response;
+            return response;
+        });
+    };
 }
-
-export default Model;

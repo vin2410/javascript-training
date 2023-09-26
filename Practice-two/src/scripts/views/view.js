@@ -1,9 +1,13 @@
-import GroupView from './groupView';
-
-class View {
+import Template from '../templates/templates';
+export default class View {
     constructor() {
-        this.group = new GroupView();
+        this.groupListEl = document.querySelector('.left-column__group');
     }
-}
 
-export default View;
+    renderGroupList = (groups) => {
+        groups.forEach((group) => {
+            const groupTemplate = Template.renderGroup(group);
+            this.groupListEl.innerHTML += groupTemplate;
+        });
+    };
+}

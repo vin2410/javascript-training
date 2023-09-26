@@ -5,23 +5,16 @@ class Controller {
     }
 
     init = async () => {
-        await this.initGroups();
+        await this.getGroupList();
     };
 
-    // Group controller //
-    initGroups = async () => {
-        try {
-            await this.model.group.init();
-        } catch {
-            alert('Could not init');
-        }
-    };
-
+    // handle get list of Groups
     getGroupList = async () => {
         try {
-            await this.model.group.getGroupList();
+            const response = await this.model.getGroupModel();
+            this.view.renderGroupList(response);
         } catch {
-            alert('failed to get group list');
+            alert("Couldn't get group list");
         }
     };
 }
