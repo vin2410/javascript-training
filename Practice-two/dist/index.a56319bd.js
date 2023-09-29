@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"cu6sN":[function(require,module,exports) {
+})({"ed8Dz":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -586,7 +586,7 @@ const view = new (0, _viewDefault.default)();
 const controller = new (0, _controllerDefault.default)(model, view);
 controller.init();
 
-},{"./models/model":"cyUWG","./views/view":"2i4RU","./controllers/controller":"e0sIE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cyUWG":[function(require,module,exports) {
+},{"./models/model":"cyUWG","./views/view":"2i4RU","./controllers/controller":"e0sIE","@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"cyUWG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _apiService = require("../services/apiService");
@@ -603,7 +603,7 @@ class Model {
 }
 exports.default = Model;
 
-},{"../services/apiService":"i8gPH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"i8gPH":[function(require,module,exports) {
+},{"../services/apiService":"i8gPH","@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"i8gPH":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getGroup", ()=>getGroup);
@@ -636,7 +636,7 @@ const deleteItem = (id)=>{
     return sendRequest(`${(0, _urls.PATH)}/${id}`, "DELETE");
 };
 
-},{"../constants/urls":"8HxS9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8HxS9":[function(require,module,exports) {
+},{"../constants/urls":"8HxS9","@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"8HxS9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "API_BASE_URL", ()=>API_BASE_URL);
@@ -644,7 +644,7 @@ parcelHelpers.export(exports, "PATH", ()=>PATH);
 const API_BASE_URL = "https://64fb3936cb9c00518f7ad090.mockapi.io";
 const PATH = "groups";
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"1T1bh":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -685,7 +685,6 @@ class View {
     }
     renderGroupList = (groups)=>{
         groups.forEach((group)=>{
-            console.log(group);
             const groupTemplate = (0, _templatesDefault.default).renderGroup(group);
             this.groupListEl.innerHTML += groupTemplate;
         });
@@ -693,7 +692,7 @@ class View {
 }
 exports.default = View;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../templates/templates":"8t1Sm"}],"8t1Sm":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh","../templates/templates":"8t1Sm"}],"8t1Sm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 class Template {
@@ -706,14 +705,14 @@ class Template {
                     </div>
                     <div class="group-item__list">
                         <span class="icon icon-menu"></span>
-                        <input type="text" class="list" readonly value=${group.list} />
+                        <input type="text" class="list" readonly value=${group.lists[0].name} />
                     </div>
                 </li>
         `;
 }
 exports.default = Template;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e0sIE":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"e0sIE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 class Controller {
@@ -736,6 +735,6 @@ class Controller {
 }
 exports.default = Controller;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["cu6sN","bAabt"], "bAabt", "parcelRequire3c22")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}]},["ed8Dz","bAabt"], "bAabt", "parcelRequire3c22")
 
 //# sourceMappingURL=index.a56319bd.js.map
