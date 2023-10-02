@@ -6,6 +6,7 @@ class Controller {
 
     init = async () => {
         await this.getGroupList();
+        this.view.addGroupView(this.addGroup.bind(this));
     };
 
     // handle get list of Groups
@@ -15,6 +16,16 @@ class Controller {
             this.view.renderGroupList(response);
         } catch {
             alert("Couldn't get group list");
+        }
+    };
+    addGroup = async (data) => {
+        try {
+            const response = await this.model.addGroupModel(data);
+            console.log(response);
+            this.view.displayGroupList(response);
+            return response;
+        } catch {
+            alert("Couldn't add group");
         }
     };
 }

@@ -600,6 +600,11 @@ class Model {
             return response;
         });
     };
+    addGroupModel = (data)=>{
+        const response = (0, _apiService.postItem)(data);
+        this.groups.push(response);
+        return response;
+    };
 }
 exports.default = Model;
 
@@ -626,8 +631,8 @@ const sendRequest = async (path, method, body)=>{
 const getGroup = ()=>{
     return sendRequest(`${(0, _urls.PATH)}`, "GET");
 };
-const postItem = (id, data)=>{
-    return sendRequest(`${(0, _urls.PATH)}/${id}`, "POST", data);
+const postItem = (data)=>{
+    return sendRequest(`${(0, _urls.PATH)}`, "POST", data);
 };
 const patchItem = (id, data)=>{
     return sendRequest(`${(0, _urls.PATH)}/${id}`, "PATCH", data);
@@ -681,13 +686,34 @@ var _templates = require("../templates/templates");
 var _templatesDefault = parcelHelpers.interopDefault(_templates);
 class View {
     constructor(){
-        this.groupListEl = document.querySelector(".left-column__group");
+        this.groupListEl = document.querySelector(".group");
+        this.addGroupBtn = document.querySelector(".icon-folder-plus");
     }
     renderGroupList = (groups)=>{
         groups.forEach((group)=>{
             const groupTemplate = (0, _templatesDefault.default).renderGroup(group);
             this.groupListEl.innerHTML += groupTemplate;
         });
+    };
+    addGroupView = (addGroup)=>{
+        this.addGroupBtn.addEventListener("click", (e)=>{
+            e.preventDefault;
+            alert("click success");
+            const groupValue = {
+                title: "",
+                lists: [
+                    {
+                        name: "",
+                        tasks: []
+                    }
+                ]
+            };
+            addGroup(groupValue);
+        });
+    };
+    displayGroupList = (group)=>{
+        const groupTemplate = (0, _templatesDefault.default).renderGroup(group);
+        this.groupListEl.innerHTML += groupTemplate;
     };
 }
 exports.default = View;
@@ -698,16 +724,16 @@ parcelHelpers.defineInteropFlag(exports);
 class Template {
     constructor(){}
     static renderGroup = (group)=>`
-                <li>
-                    <div class="group-item">
-                        <span class="icon icon-list"></span>
-                        <input type="text" class="group" readonly value=${group.title}/>
-                    </div>
-                    <div class="group-item__list">
-                        <span class="icon icon-menu"></span>
-                        <input type="text" class="list" readonly value=${group.lists[0].name} />
-                    </div>
-                </li>
+            <li>
+                <div class="group-item__title">
+                    <span class="icon icon-list"></span>
+                    <input type="text" readonly value=${group.title}/>
+                </div>
+                <div class="group-item__list">
+                    <span class="icon icon-menu"></span>
+                    <input type="text" readonly value=${group.lists.name} />
+                </div>
+            </li>
         `;
 }
 exports.default = Template;
@@ -722,6 +748,7 @@ class Controller {
     }
     init = async ()=>{
         await this.getGroupList();
+        this.view.addGroupView(this.addGroup.bind(this));
     };
     // handle get list of Groups
     getGroupList = async ()=>{
@@ -730,6 +757,16 @@ class Controller {
             this.view.renderGroupList(response);
         } catch  {
             alert("Couldn't get group list");
+        }
+    };
+    addGroup = async (data)=>{
+        try {
+            const response = await this.model.addGroupModel(data);
+            console.log(response);
+            this.view.displayGroupList(response);
+            return response;
+        } catch  {
+            alert("Couldn't add group");
         }
     };
 }

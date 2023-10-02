@@ -1,4 +1,4 @@
-import { getGroup } from '../services/apiService';
+import { getGroup, postItem, patchItem, deleteItem } from '../services/apiService';
 
 export default class Model {
     constructor() {
@@ -9,5 +9,10 @@ export default class Model {
             this.groups = response;
             return response;
         });
+    };
+    addGroupModel = (data) => {
+        const response = postItem(data);
+        this.groups.push(response);
+        return response;
     };
 }
