@@ -1,67 +1,67 @@
 66
-57D:\Agility\javascript-training\practice-two\.editorconfig133402538432349882 0
-53D:\Agility\javascript-training\practice-two\README.md133402538432418890 0
-74D:\Agility\javascript-training\practice-two\src\style\component\button.css133402548709304522 0
-56D:\Agility\javascript-training\practice-two\.eslintrc.js133402538432418890 0
-56D:\Agility\javascript-training\practice-two\package.json133402548709283525 0
-73D:\Agility\javascript-training\practice-two\src\scripts\constants\urls.js133402548709293525 0
-72D:\Agility\javascript-training\practice-two\src\style\component\icon.css133402538432497373 0
-61D:\Agility\javascript-training\practice-two\package-lock.json133402548709273525 0
-66D:\Agility\javascript-training\practice-two\dist\index.a56319bd.js133402613021065600 0
-61D:\Agility\javascript-training\practice-two\src\scripts\views133402548709304522 1
-48D:\Agility\javascript-training\practice-two\dist133402613021090865 1
-54D:\Agility\javascript-training\practice-two\.gitignore133402548708180330 0
-64D:\Agility\javascript-training\practice-two\src\scripts\services133402548709294334 1
-55D:\Agility\javascript-training\practice-two\.prettierrc133402538432418890 0
-47D:\Agility\javascript-training\practice-two\src133402548709283525 1
-76D:\Agility\javascript-training\practice-two\src\style\abstract\variables.css133402538432476818 0
-54D:\Agility\javascript-training\practice-two\src\assets133402538432434294 1
-58D:\Agility\javascript-training\practice-two\src\index.html133402550095213713 0
-62D:\Agility\javascript-training\practice-two\src\style\main.css133402538432497373 0
-81D:\Agility\javascript-training\practice-two\src\assets\fonts\Segoe UI Italic.woff133402538432449338 0
-55D:\Agility\javascript-training\practice-two\src\scripts133402548709304522 1
-67D:\Agility\javascript-training\practice-two\src\scripts\controllers133402548709294334 1
-69D:\Agility\javascript-training\practice-two\dist\icomoon.c08e6c11.ttf133402599885169942 0
-69D:\Agility\javascript-training\practice-two\dist\icomoon.4fd10590.eot133402599885229606 0
-53D:\Agility\javascript-training\practice-two\src\style133402538432497373 1
-69D:\Agility\javascript-training\practice-two\dist\icomoon.efcc0923.svg133402599885155958 0
-62D:\Agility\javascript-training\practice-two\src\style\abstract133402538432476818 1
-73D:\Agility\javascript-training\practice-two\src\style\base\typography.css133402548709304522 0
-58D:\Agility\javascript-training\practice-two\src\style\base133402548709304522 1
-63D:\Agility\javascript-training\practice-two\src\style\component133402548709304522 1
-60D:\Agility\javascript-training\practice-two\src\style\layout133402538432497373 1
-62D:\Agility\javascript-training\practice-two\src\scripts\models133402548709294334 1
-78D:\Agility\javascript-training\practice-two\src\style\layout\center-column.css133402538432497373 0
-67D:\Agility\javascript-training\practice-two\dist\index.599ca509.css133402599885252343 0
-76D:\Agility\javascript-training\practice-two\src\style\layout\left-column.css133402538432497373 0
-73D:\Agility\javascript-training\practice-two\src\style\component\input.css133402538432497373 0
-72D:\Agility\javascript-training\practice-two\src\scripts\helpers\.gitkeep133402538432476818 0
-81D:\Agility\javascript-training\practice-two\src\scripts\controllers\controller.js133402613020564625 0
-69D:\Agility\javascript-training\practice-two\src\style\base\global.css133402538432487290 0
-68D:\Agility\javascript-training\practice-two\src\style\base\reset.css133402538432487290 0
-62D:\Agility\javascript-training\practice-two\src\scripts\app.js133402548709283525 0
-65D:\Agility\javascript-training\practice-two\src\scripts\constants133402548709283525 1
-72D:\Agility\javascript-training\practice-two\src\assets\fonts\icomoon.eot133402538432454538 0
-59D:\Agility\javascript-training\practice-two\dist\index.html133402581044011274 0
-63D:\Agility\javascript-training\practice-two\src\scripts\helpers133402538432476818 1
-86D:\Agility\javascript-training\practice-two\src\assets\fonts\Segoe UI Bold Italic.woff133402538432434294 0
-65D:\Agility\javascript-training\practice-two\src\scripts\templates133402548709304522 1
-66D:\Agility\javascript-training\practice-two\dist\index.b8fca702.js133402548709263462 0
-69D:\Agility\javascript-training\practice-two\src\scripts\views\view.js133402612970264083 0
-78D:\Agility\javascript-training\practice-two\src\scripts\templates\templates.js133402601851370409 0
-78D:\Agility\javascript-training\practice-two\src\scripts\services\apiService.js133402548709294334 0
-71D:\Agility\javascript-training\practice-two\src\scripts\models\model.js133402612714315841 0
-70D:\Agility\javascript-training\practice-two\dist\icomoon.3de59098.woff133402599885229606 0
-60D:\Agility\javascript-training\practice-two\src\assets\fonts133402538432454538 1
-72D:\Agility\javascript-training\practice-two\src\assets\fonts\icomoon.svg133402538432454538 0
-72D:\Agility\javascript-training\practice-two\src\assets\fonts\icomoon.ttf133402538432454538 0
-73D:\Agility\javascript-training\practice-two\src\assets\fonts\icomoon.woff133402538432454538 0
-79D:\Agility\javascript-training\practice-two\src\assets\fonts\Segoe UI Bold.woff133402538432434294 0
-74D:\Agility\javascript-training\practice-two\src\assets\fonts\Segoe UI.woff133402538432449338 0
-71D:\Agility\javascript-training\practice-two\dist\index.599ca509.css.map133402599885281338 0
-70D:\Agility\javascript-training\practice-two\dist\index.a56319bd.js.map133402613021090865 0
-70D:\Agility\javascript-training\practice-two\dist\index.b8fca702.js.map133402548709263462 0
-83D:\Agility\javascript-training\practice-two\dist\Segoe UI Bold Italic.01904aef.woff133402599885240136 0
-76D:\Agility\javascript-training\practice-two\dist\Segoe UI Bold.5045b82b.woff133402599885229606 0
-78D:\Agility\javascript-training\practice-two\dist\Segoe UI Italic.48c68c32.woff133402599885169942 0
-71D:\Agility\javascript-training\practice-two\dist\Segoe UI.6c70b1ed.woff133402599885229606 0
+57D:\Agility\javascript-training\Practice-two\.editorconfig133404686708506649 0
+53D:\Agility\javascript-training\Practice-two\README.md133404686708516650 0
+56D:\Agility\javascript-training\Practice-two\.eslintrc.js133404686708506649 0
+74D:\Agility\javascript-training\Practice-two\src\style\component\button.css133406917866149919 0
+56D:\Agility\javascript-training\Practice-two\package.json133404686765406993 0
+73D:\Agility\javascript-training\Practice-two\src\scripts\constants\urls.js133404686765406993 0
+72D:\Agility\javascript-training\Practice-two\src\style\component\icon.css133406400039609770 0
+61D:\Agility\javascript-training\Practice-two\package-lock.json133404686765396998 0
+66D:\Agility\javascript-training\Practice-two\dist\index.a56319bd.js133407202004506990 0
+61D:\Agility\javascript-training\Practice-two\src\scripts\views133404686765416992 1
+48D:\Agility\javascript-training\Practice-two\dist133407213133316967 1
+54D:\Agility\javascript-training\Practice-two\.gitignore133404686764275857 0
+64D:\Agility\javascript-training\Practice-two\src\scripts\services133404686765416992 1
+47D:\Agility\javascript-training\Practice-two\src133404686765406993 1
+55D:\Agility\javascript-training\Practice-two\.prettierrc133404686708516650 0
+76D:\Agility\javascript-training\Practice-two\src\style\abstract\variables.css133404686708566649 0
+54D:\Agility\javascript-training\Practice-two\src\assets133404686708526659 1
+62D:\Agility\javascript-training\Practice-two\src\style\main.css133404686708581701 0
+58D:\Agility\javascript-training\Practice-two\src\index.html133406943416460742 0
+81D:\Agility\javascript-training\Practice-two\src\assets\fonts\Segoe UI Italic.woff133404686708536649 0
+55D:\Agility\javascript-training\Practice-two\src\scripts133404686765416992 1
+69D:\Agility\javascript-training\Practice-two\dist\icomoon.c08e6c11.ttf133407202002765298 0
+69D:\Agility\javascript-training\Practice-two\dist\icomoon.4fd10590.eot133407202004046341 0
+53D:\Agility\javascript-training\Practice-two\src\style133404686708581701 1
+67D:\Agility\javascript-training\Practice-two\src\scripts\controllers133404686765406993 1
+62D:\Agility\javascript-training\Practice-two\src\style\abstract133404686708556650 1
+69D:\Agility\javascript-training\Practice-two\dist\icomoon.efcc0923.svg133407202005615419 0
+73D:\Agility\javascript-training\Practice-two\src\style\base\typography.css133404686765426992 0
+58D:\Agility\javascript-training\Practice-two\src\style\base133404686765426992 1
+63D:\Agility\javascript-training\Practice-two\src\style\component133404686765426992 1
+60D:\Agility\javascript-training\Practice-two\src\style\layout133404686708581701 1
+62D:\Agility\javascript-training\Practice-two\src\scripts\models133404686765416992 1
+78D:\Agility\javascript-training\Practice-two\src\style\layout\center-column.css133407212721738288 0
+67D:\Agility\javascript-training\Practice-two\dist\index.599ca509.css133407213133278206 0
+76D:\Agility\javascript-training\Practice-two\src\style\layout\left-column.css133407212185938522 0
+73D:\Agility\javascript-training\Practice-two\src\style\component\input.css133404686708576649 0
+81D:\Agility\javascript-training\Practice-two\src\scripts\controllers\controller.js133407194359979515 0
+72D:\Agility\javascript-training\Practice-two\src\scripts\helpers\.gitkeep133404686708556650 0
+69D:\Agility\javascript-training\Practice-two\src\style\base\global.css133407213132850328 0
+68D:\Agility\javascript-training\Practice-two\src\style\base\reset.css133404686708566649 0
+62D:\Agility\javascript-training\Practice-two\src\scripts\app.js133404686765406993 0
+72D:\Agility\javascript-training\Practice-two\src\assets\fonts\icomoon.eot133404686708536649 0
+65D:\Agility\javascript-training\Practice-two\src\scripts\constants133404686765406993 1
+59D:\Agility\javascript-training\Practice-two\dist\index.html133407202005439042 0
+63D:\Agility\javascript-training\Practice-two\src\scripts\helpers133404686708556650 1
+86D:\Agility\javascript-training\Practice-two\src\assets\fonts\Segoe UI Bold Italic.woff133404686708526659 0
+65D:\Agility\javascript-training\Practice-two\src\scripts\templates133404686765416992 1
+66D:\Agility\javascript-training\Practice-two\dist\index.b8fca702.js133404686765386992 0
+69D:\Agility\javascript-training\Practice-two\src\scripts\views\view.js133407195582204575 0
+78D:\Agility\javascript-training\Practice-two\src\scripts\templates\templates.js133406910906423826 0
+78D:\Agility\javascript-training\Practice-two\src\scripts\services\apiService.js133407172832544821 0
+71D:\Agility\javascript-training\Practice-two\src\scripts\models\model.js133407194122988426 0
+70D:\Agility\javascript-training\Practice-two\dist\icomoon.3de59098.woff133407202004740013 0
+60D:\Agility\javascript-training\Practice-two\src\assets\fonts133404686708546649 1
+72D:\Agility\javascript-training\Practice-two\src\assets\fonts\icomoon.svg133404686708546649 0
+72D:\Agility\javascript-training\Practice-two\src\assets\fonts\icomoon.ttf133404686708546649 0
+73D:\Agility\javascript-training\Practice-two\src\assets\fonts\icomoon.woff133404686708546649 0
+79D:\Agility\javascript-training\Practice-two\src\assets\fonts\Segoe UI Bold.woff133404686708526659 0
+74D:\Agility\javascript-training\Practice-two\src\assets\fonts\Segoe UI.woff133404686708536649 0
+71D:\Agility\javascript-training\Practice-two\dist\index.599ca509.css.map133407213133305204 0
+70D:\Agility\javascript-training\Practice-two\dist\index.a56319bd.js.map133407202004506990 0
+70D:\Agility\javascript-training\Practice-two\dist\index.b8fca702.js.map133404686765396998 0
+83D:\Agility\javascript-training\Practice-two\dist\Segoe UI Bold Italic.01904aef.woff133407202004830445 0
+76D:\Agility\javascript-training\Practice-two\dist\Segoe UI Bold.5045b82b.woff133407202004740013 0
+78D:\Agility\javascript-training\Practice-two\dist\Segoe UI Italic.48c68c32.woff133407202002765298 0
+71D:\Agility\javascript-training\Practice-two\dist\Segoe UI.6c70b1ed.woff133407202004046341 0

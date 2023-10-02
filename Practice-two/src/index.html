@@ -10,27 +10,29 @@
         <main class="container">
             <section class="main-page">
                 <div class="left-column">
-                    <ul class="left-column__group"></ul>
+                    <ul class="group"></ul>
                     <div class="side-bar-addlist">
                         <button>
                             <span class="icon icon icon-plus"></span>
+                            <input readonly type="text" placeholder="New list" />
                         </button>
-                        <input type="text" placeholder="New list" />
-                        <span class="icon icon-folder-plus"></span>
+                        <button class="button button-addGroup">
+                            <span class="icon icon-folder-plus"></span>
+                        </button>
                     </div>
                 </div>
                 <div class="center-column">
-                    <div class="center-column__list group-item__list">
-                        <input type="text" class="list" value="Untitled list" />
-                    </div>
-                    <ul class="center-column__task">
-                        <li>
+                    <ul class="list">
+                        <li class="list-name">
+                            <input readonly type="text" value="Untitled" />
+                        </li>
+                        <li class="list-task">
                             <button class="icon icon-plus"></button>
                             <input type="text" placeholder="Add a Task" />
                         </li>
-                        <li>
+                        <li class="list-task">
                             <button class="icon icon-checkmark"></button>
-                            <input type="text" value="Create main page " />
+                            <input readonly type="text" value="Create main page " />
                             <button class="icon icon-pencil"></button>
                             <button class="icon icon-bin"></button>
                         </li>

@@ -21,8 +21,8 @@ export const getGroup = () => {
 };
 
 // Post method
-export const postItem = (id, data) => {
-    return sendRequest(`${PATH}/${id}`, 'POST', data);
+export const postItem = (data) => {
+    return sendRequest(`${PATH}`, 'POST', data);
 };
 
 // Patch method

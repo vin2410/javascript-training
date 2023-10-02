@@ -3,15 +3,15 @@ export default class Template {
 
     static renderGroup = (group) =>
         `
-                <li>
-                    <div class="group-item">
-                        <span class="icon icon-list"></span>
-                        <input type="text" class="group" readonly value=${group.title}/>
-                    </div>
-                    <div class="group-item__list">
-                        <span class="icon icon-menu"></span>
-                        <input type="text" class="list" readonly value=${group.lists[0].name} />
-                    </div>
-                </li>
+            <li>
+                <div class="group-item__title">
+                    <span class="icon icon-list"></span>
+                    <input type="text" readonly value=${group.title}/>
+                </div>
+                <div class="group-item__list">
+                    <span class="icon icon-menu"></span>
+                    <input type="text" readonly value=${group.lists.name} />
+                </div>
+            </li>
         `;
 }
