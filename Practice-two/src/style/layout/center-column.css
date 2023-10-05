@@ -1,6 +1,6 @@
 .center-column {
     width: 100%;
-    overflow-y: visible;
+    height: 100vh;
     background-color: var(--color-bg-primary);
 }
 

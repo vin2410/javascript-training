@@ -589,67 +589,16 @@ controller.init();
 },{"./models/model":"cyUWG","./views/view":"2i4RU","./controllers/controller":"e0sIE","@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"cyUWG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _apiService = require("../services/apiService");
+var _group = require("./group");
+var _groupDefault = parcelHelpers.interopDefault(_group);
 class Model {
     constructor(){
-        this.groups = [];
+        this.group = new (0, _groupDefault.default)();
     }
-    getGroupModel = ()=>{
-        return (0, _apiService.getGroup)().then((response)=>{
-            this.groups = response;
-            return response;
-        });
-    };
-    addGroupModel = (data)=>{
-        const response = (0, _apiService.postItem)(data);
-        this.groups.push(response);
-        return response;
-    };
 }
 exports.default = Model;
 
-},{"../services/apiService":"i8gPH","@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"i8gPH":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getGroup", ()=>getGroup);
-parcelHelpers.export(exports, "postItem", ()=>postItem);
-parcelHelpers.export(exports, "patchItem", ()=>patchItem);
-parcelHelpers.export(exports, "deleteItem", ()=>deleteItem);
-var _urls = require("../constants/urls");
-const sendRequest = async (path, method, body)=>{
-    const url = `${(0, _urls.API_BASE_URL)}/${path}`;
-    const response = await fetch(url, {
-        method,
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(body)
-    });
-    if (response.ok) return await response.json();
-    else throw new Error("Error while sending request");
-};
-const getGroup = ()=>{
-    return sendRequest(`${(0, _urls.PATH)}`, "GET");
-};
-const postItem = (data)=>{
-    return sendRequest(`${(0, _urls.PATH)}`, "POST", data);
-};
-const patchItem = (id, data)=>{
-    return sendRequest(`${(0, _urls.PATH)}/${id}`, "PATCH", data);
-};
-const deleteItem = (id)=>{
-    return sendRequest(`${(0, _urls.PATH)}/${id}`, "DELETE");
-};
-
-},{"../constants/urls":"8HxS9","@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"8HxS9":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "API_BASE_URL", ()=>API_BASE_URL);
-parcelHelpers.export(exports, "PATH", ()=>PATH);
-const API_BASE_URL = "https://64fb3936cb9c00518f7ad090.mockapi.io";
-const PATH = "groups";
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"1T1bh":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh","./group":"4FJGT"}],"1T1bh":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -679,7 +628,87 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"2i4RU":[function(require,module,exports) {
+},{}],"4FJGT":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _apisClient = require("../services/apisClient");
+var _apisClientDefault = parcelHelpers.interopDefault(_apisClient);
+class Group {
+    constructor(){
+        this.ApisClient = new (0, _apisClientDefault.default)();
+        this.groupList;
+    }
+    init = async ()=>{
+        this.groupList = await this.ApisClient.getGroup();
+    };
+    getGroupList = ()=>{
+        return this.groupList;
+    };
+    addGroup = async (data)=>{
+        await this.ApisClient.postItem(data);
+        this.groupList.push(data);
+    };
+}
+exports.default = Group;
+
+},{"../services/apisClient":"9NIT9","@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"9NIT9":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _urls = require("../constants/urls");
+var _constants = require("../constants/constants");
+class ApisClient {
+    sendRequest = async (path, method, body)=>{
+        const url = `${(0, _urls.API_BASE_URL)}/${path}`;
+        const response = await fetch(url, {
+            method,
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        });
+        if (response.ok) return await response.json();
+        else throw new Error((0, _constants.errorMessage).REQUEST_ERROR);
+    };
+    // Get method
+    getGroup = async ()=>{
+        return await this.sendRequest(`${(0, _urls.PATH)}`, "GET");
+    };
+    // Post method
+    postItem = async (data)=>{
+        return await this.sendRequest(`${(0, _urls.PATH)}`, "POST", data);
+    };
+    // Patch method
+    patchItem = async (id, data)=>{
+        return await this.sendRequest(`${(0, _urls.PATH)}/${id}`, "PATCH", data);
+    };
+    // Delete method
+    deleteItem = async (id)=>{
+        return await this.sendRequest(`${(0, _urls.PATH)}/${id}`, "DELETE");
+    };
+}
+exports.default = ApisClient;
+
+},{"../constants/urls":"8HxS9","@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh","../constants/constants":"bpLmo"}],"8HxS9":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "API_BASE_URL", ()=>API_BASE_URL);
+parcelHelpers.export(exports, "PATH", ()=>PATH);
+const API_BASE_URL = "https://64fb3936cb9c00518f7ad090.mockapi.io";
+const PATH = "groups";
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"bpLmo":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "errorMessage", ()=>errorMessage);
+const errorMessage = {
+    REQUEST_ERROR: "ERROR WHILE SENDING REQUEST",
+    GET_GROUP_LIST: "Couldn't get group ",
+    INIT_GROUP_LIST: "Couldn't initialize group ",
+    RENDER_GROUP_LIST: "Couldn't render group ",
+    ADD_GROUP: "Couldn't add group "
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"2i4RU":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _templates = require("../templates/templates");
@@ -741,37 +770,42 @@ exports.default = Template;
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"e0sIE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+var _constants = require("../constants/constants");
 class Controller {
     constructor(model, view){
         this.model = model;
         this.view = view;
     }
     init = async ()=>{
-        await this.getGroupList();
-        this.view.addGroupView(this.addGroup.bind(this));
+        await this.initGroup();
     };
-    // handle get list of Groups
-    getGroupList = async ()=>{
+    initGroup = async ()=>{
         try {
-            const response = await this.model.getGroupModel();
-            this.view.renderGroupList(response);
+            await this.model.group.init();
         } catch  {
-            alert("Couldn't get group list");
+            alert((0, _constants.errorMessage).INIT_GROUP_LIST);
+        }
+        this.loadGroupList();
+        this.view.addGroupView(this.addGroupList);
+    };
+    loadGroupList = ()=>{
+        try {
+            const data = this.model.group.getGroupList();
+            this.view.renderGroupList(data);
+        } catch  {
+            alert((0, _constants.errorMessage).RENDER_GROUP_LIST);
         }
     };
-    addGroup = async (data)=>{
+    addGroupList = async (data)=>{
         try {
-            const response = await this.model.addGroupModel(data);
-            console.log(response);
-            this.view.displayGroupList(response);
-            return response;
+            this.view.displayGroupList(data);
         } catch  {
-            alert("Couldn't add group");
+            alert((0, _constants.errorMessage).ADD_GROUP);
         }
     };
 }
 exports.default = Controller;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}]},["ed8Dz","bAabt"], "bAabt", "parcelRequire3c22")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh","../constants/constants":"bpLmo"}]},["ed8Dz","bAabt"], "bAabt", "parcelRequire3c22")
 
 //# sourceMappingURL=index.a56319bd.js.map

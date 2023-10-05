@@ -1,18 +1,19 @@
-import { getGroup, postItem, patchItem, deleteItem } from '../services/apiService';
+import ApisClient from '../services/apisClient';
 
 export default class Group {
     constructor() {
-        this.groups = [];
+        this.ApisClient = new ApisClient();
+        this.groupList;
     }
-    getGroupModel = () => {
-        return getGroup().then((response) => {
-            this.groups = response;
-            return response;
-        });
+
+    init = async () => {
+        this.groupList = await this.ApisClient.getGroup();
     };
-    addGroupModel = (data) => {
-        const response = postItem(data);
-        this.groups.push(response);
-        return response;
+    getGroupList = () => {
+        return this.groupList;
+    };
+    addGroup = async (data) => {
+        await this.ApisClient.postItem(data);
+        this.groupList.push(data);
     };
 }
