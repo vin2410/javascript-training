@@ -1,3 +1,5 @@
+import { errorMessage } from '../constants/constants';
+
 class Controller {
     constructor(model, view) {
         this.model = model;
@@ -5,27 +7,32 @@ class Controller {
     }
 
     init = async () => {
-        await this.getGroupList();
-        this.view.addGroupView(this.addGroup.bind(this));
+        await this.initGroup();
     };
 
-    // handle get list of Groups
-    getGroupList = async () => {
+    initGroup = async () => {
         try {
-            const response = await this.model.getGroupModel();
-            this.view.renderGroupList(response);
+            await this.model.group.init();
         } catch {
-            alert("Couldn't get group list");
+            alert(errorMessage.INIT_GROUP_LIST);
+        }
+        this.loadGroupList();
+        this.view.addGroupView(this.addGroupList);
+    };
+
+    loadGroupList = () => {
+        try {
+            const data = this.model.group.getGroupList();
+            this.view.renderGroupList(data);
+        } catch {
+            alert(errorMessage.RENDER_GROUP_LIST);
         }
     };
-    addGroup = async (data) => {
+    addGroupList = async (data) => {
         try {
-            const response = await this.model.addGroupModel(data);
-            console.log(response);
-            this.view.displayGroupList(response);
-            return response;
+            this.view.displayGroupList(data);
         } catch {
-            alert("Couldn't add group");
+            alert(errorMessage.ADD_GROUP);
         }
     };
 }
