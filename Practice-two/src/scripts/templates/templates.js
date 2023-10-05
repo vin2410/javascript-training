@@ -10,7 +10,7 @@ export default class Template {
                     </div>
                     <div class="group-item__list">
                         <span class="icon icon-menu"></span>
-                        <input type="text" class="list" readonly value=${group.lists[0].name} />
+                        <input type="text" class="list" readonly value=${group.lists.name} />
                     </div>
                 </li>
         `;

@@ -1,20 +1,29 @@
+import { errorMessage } from '../constants/constant';
+
 class Controller {
     constructor(model, view) {
         this.model = model;
         this.view = view;
     }
-
     init = async () => {
-        await this.getGroupList();
+        await this.initGroup();
     };
 
-    // handle get list of Groups
-    getGroupList = async () => {
+    initGroup = async () => {
         try {
-            const response = await this.model.getGroupModel();
-            this.view.renderGroupList(response);
+            await this.model.group.init();
         } catch {
-            alert("Couldn't get group list");
+            alert(errorMessage.INIT_GROUP_LIST);
+        }
+        this.loadGroupList();
+    };
+
+    loadGroupList = () => {
+        try {
+            const data = this.model.group.getGroupList();
+            this.view.renderGroupList(data);
+        } catch {
+            alert(errorMessage.RENDER_GROUP_LIST);
         }
     };
 }

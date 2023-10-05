@@ -1,7 +1,7 @@
 import Template from '../templates/templates';
 export default class View {
     constructor() {
-        this.groupListEl = document.querySelector('.left-column__group');
+        this.groupListEl = document.querySelector('.group');
     }
 
     renderGroupList = (groups) => {
