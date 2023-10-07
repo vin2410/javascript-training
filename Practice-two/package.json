@@ -1,18 +1,18 @@
 {
-    "name": "practice-two",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "start": "parcel src/index.html",
-        "build": "parcel build src/index.html",
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build"
-    },
-    "author": "Vinh Le",
-    "license": "ISC",
-    "devDependencies": {
-        "eslint": "^8.49.0",
-        "parcel": "^2.9.3"
-    }
+  "name": "practice-two",
+  "version": "1.0.0",
+  "description": "-   Apply knowledge of HTML5/CSS3/JavaScript (with ES6 syntax)\r -   Understand and apply MVC pattern\r -   Understand and apply DOM manipulation, form validation\r -   Structure project following Module pattern.",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "author": "Vinh Le",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "parcel": "^2.9.3"
+  }
 }
