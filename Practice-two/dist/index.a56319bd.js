@@ -711,9 +711,21 @@ const errorMessage = {
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"2i4RU":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+var _groupView = require("./groupView");
+var _groupViewDefault = parcelHelpers.interopDefault(_groupView);
+class View {
+    constructor(){
+        this.group = new (0, _groupViewDefault.default)();
+    }
+}
+exports.default = View;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh","./groupView":"lNTTl"}],"lNTTl":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 var _templates = require("../templates/templates");
 var _templatesDefault = parcelHelpers.interopDefault(_templates);
-class View {
+class GroupView {
     constructor(){
         this.groupListEl = document.querySelector(".group");
         this.addGroupBtn = document.querySelector(".icon-folder-plus");
@@ -745,9 +757,9 @@ class View {
         this.groupListEl.innerHTML += groupTemplate;
     };
 }
-exports.default = View;
+exports.default = GroupView;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh","../templates/templates":"8t1Sm"}],"8t1Sm":[function(require,module,exports) {
+},{"../templates/templates":"8t1Sm","@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"8t1Sm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 class Template {
@@ -770,8 +782,25 @@ exports.default = Template;
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"e0sIE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _constants = require("../constants/constants");
+var _group = require("../controllers/group");
+var _groupDefault = parcelHelpers.interopDefault(_group);
 class Controller {
+    constructor(model, view){
+        this.model = model;
+        this.view = view;
+        this.groupController = new (0, _groupDefault.default)(this.model, this.view);
+    }
+    init = ()=>{
+        this.groupController.init();
+    };
+}
+exports.default = Controller;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh","../controllers/group":"chpDN"}],"chpDN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _constants = require("../constants/constants");
+class GroupController {
     constructor(model, view){
         this.model = model;
         this.view = view;
@@ -786,26 +815,27 @@ class Controller {
             alert((0, _constants.errorMessage).INIT_GROUP_LIST);
         }
         this.loadGroupList();
-        this.view.addGroupView(this.addGroupList);
+        this.view.group.addGroupView(this.addGroupList);
     };
     loadGroupList = ()=>{
         try {
             const data = this.model.group.getGroupList();
-            this.view.renderGroupList(data);
+            this.view.group.renderGroupList(data);
         } catch  {
             alert((0, _constants.errorMessage).RENDER_GROUP_LIST);
         }
     };
     addGroupList = async (data)=>{
         try {
-            this.view.displayGroupList(data);
+            this.model.group.addGroup(data);
+            await this.view.group.displayGroupList(data);
         } catch  {
             alert((0, _constants.errorMessage).ADD_GROUP);
         }
     };
 }
-exports.default = Controller;
+exports.default = GroupController;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh","../constants/constants":"bpLmo"}]},["ed8Dz","bAabt"], "bAabt", "parcelRequire3c22")
+},{"../constants/constants":"bpLmo","@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}]},["ed8Dz","bAabt"], "bAabt", "parcelRequire3c22")
 
 //# sourceMappingURL=index.a56319bd.js.map
