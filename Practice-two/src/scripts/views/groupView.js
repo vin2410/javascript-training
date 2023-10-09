@@ -36,6 +36,4 @@ export default class GroupView {
         const data = this.template.groupTemplate.renderGroup(group);
         this.groupListEl.innerHTML += data;
     };
-
-    renameGroup = (group) => {};
 }
