@@ -7,8 +7,7 @@ export default class Group {
     }
 
     init = async () => {
-        this.groupList = await this.ApisClient.getGroup();
-        console.log(this.groupList[1].title);
+        this.groupList = await this.ApisClient.getItem();
     };
 
     getGroupList = () => {

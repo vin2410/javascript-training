@@ -18,7 +18,7 @@ export default class ApisClient {
         }
     };
     // Get method
-    getGroup = async () => {
+    getItem = async () => {
         return await this.sendRequest(`${PATH}`, 'GET');
     };
 
