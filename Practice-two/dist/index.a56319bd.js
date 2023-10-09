@@ -723,17 +723,18 @@ exports.default = View;
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh","./groupView":"lNTTl"}],"lNTTl":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _templates = require("../templates/templates");
-var _templatesDefault = parcelHelpers.interopDefault(_templates);
+var _template = require("../templates/template");
+var _templateDefault = parcelHelpers.interopDefault(_template);
 class GroupView {
     constructor(){
+        this.template = new (0, _templateDefault.default)();
         this.groupListEl = document.querySelector(".group");
         this.addGroupBtn = document.querySelector(".icon-folder-plus");
     }
     renderGroupList = (groups)=>{
         groups.forEach((group)=>{
-            const groupTemplate = (0, _templatesDefault.default).renderGroup(group);
-            this.groupListEl.innerHTML += groupTemplate;
+            const data = this.template.groupTemplate.renderGroup(group);
+            this.groupListEl.innerHTML += data;
         });
     };
     addGroupView = (addGroup)=>{
@@ -753,31 +754,43 @@ class GroupView {
         });
     };
     displayGroupList = (group)=>{
-        const groupTemplate = (0, _templatesDefault.default).renderGroup(group);
-        this.groupListEl.innerHTML += groupTemplate;
+        const data = this.template.groupTemplate.renderGroup(group);
+        this.groupListEl.innerHTML += data;
     };
 }
 exports.default = GroupView;
 
-},{"../templates/templates":"8t1Sm","@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"8t1Sm":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh","../templates/template":"bnUH9"}],"bnUH9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+var _group = require("./group");
+var _groupDefault = parcelHelpers.interopDefault(_group);
 class Template {
-    constructor(){}
-    static renderGroup = (group)=>`
-            <li>
-                <div class="group-item__title">
-                    <span class="icon icon-list"></span>
-                    <input type="text" readonly value=${group.title}/>
-                </div>
-                <div class="group-item__list">
-                    <span class="icon icon-menu"></span>
-                    <input type="text" readonly value=${group.lists.name} />
-                </div>
-            </li>
-        `;
+    constructor(){
+        this.groupTemplate = new (0, _groupDefault.default)();
+    }
 }
 exports.default = Template;
+
+},{"./group":"7RIY7","@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"7RIY7":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+class GroupTemplate {
+    constructor(){}
+    renderGroup = (group)=>`
+        <li>
+            <div class="group-item__title">
+                <span class="icon icon-list"></span>
+                <input type="text" readonly value=${group.title}/>
+            </div>
+            <div class="group-item__list">
+                <span class="icon icon-menu"></span>
+                <input type="text" readonly value=${group.lists.name} />
+            </div>
+        </li>
+    `;
+}
+exports.default = GroupTemplate;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"1T1bh"}],"e0sIE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

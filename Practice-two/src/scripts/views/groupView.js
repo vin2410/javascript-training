@@ -1,15 +1,16 @@
-import Template from '../templates/templates';
+import Template from '../templates/template';
 
 export default class GroupView {
     constructor() {
+        this.template = new Template();
         this.groupListEl = document.querySelector('.group');
         this.addGroupBtn = document.querySelector('.icon-folder-plus');
     }
 
     renderGroupList = (groups) => {
         groups.forEach((group) => {
-            const groupTemplate = Template.renderGroup(group);
-            this.groupListEl.innerHTML += groupTemplate;
+            const data = this.template.groupTemplate.renderGroup(group);
+            this.groupListEl.innerHTML += data;
         });
     };
 
@@ -31,7 +32,7 @@ export default class GroupView {
     };
 
     displayGroupList = (group) => {
-        const groupTemplate = Template.renderGroup(group);
-        this.groupListEl.innerHTML += groupTemplate;
+        const data = this.template.groupTemplate.renderGroup(group);
+        this.groupListEl.innerHTML += data;
     };
 }
