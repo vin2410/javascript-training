@@ -10,54 +10,36 @@
         <main class="container">
             <section class="main-page">
                 <div class="left-column">
-                    <ul>
-                        <li>
-                            <div class="group-item">
-                                <span class="icon icon-list"></span>
-                                <input type="text" class="group" readonly value="Untitled group" />
-                                <span class="icon icon-arrow-down2"></span>
-                                <span class="icon icon-arrow-up2" hidden></span>
-                            </div>
-                            <div class="group-item__list">
-                                <span class="icon icon-menu"></span>
-                                <input type="text" class="list" readonly value="Untitled list" />
-                            </div>
-                        </li>
-                    </ul>
+                    <ul class="group"></ul>
                     <div class="side-bar-addlist">
                         <button>
                             <span class="icon icon icon-plus"></span>
+                            <input readonly type="text" placeholder="New list" />
                         </button>
-                        <input type="text" placeholder="New list" />
-                        <span class="icon icon-folder-plus"></span>
+                        <button class="button button-addGroup">
+                            <span class="icon icon-folder-plus"></span>
+                        </button>
                     </div>
                 </div>
                 <div class="center-column">
-                    <div class="center-column__list group-item__list">
-                        <input type="text" class="list" value="Untitled list" />
-                    </div>
-                    <ul class="center-column__task">
-                        <li>
-                            <button>
-                                <span class="icon icon-plus"></span>
-                            </button>
+                    <ul class="list">
+                        <li class="list-name">
+                            <input readonly type="text" value="Untitled" />
+                        </li>
+                        <li class="list-task">
+                            <button class="icon icon-plus"></button>
                             <input type="text" placeholder="Add a Task" />
                         </li>
-                        <li>
-                            <button>
-                                <span class="icon icon-checkmark"></span>
-                            </button>
-                            <input type="text" value="Create main page" readonly />
-                            <button>
-                                <span class="icon icon-pencil"></span>
-                            </button>
-                            <button>
-                                <span class="icon icon-bin"></span>
-                            </button>
+                        <li class="list-task">
+                            <button class="icon icon-checkmark"></button>
+                            <input readonly type="text" value="Create main page " />
+                            <button class="icon icon-pencil"></button>
+                            <button class="icon icon-bin"></button>
                         </li>
                     </ul>
                 </div>
             </section>
         </main>
+        <script type="module" src="./scripts/app.js"></script>
     </body>
 </html>
