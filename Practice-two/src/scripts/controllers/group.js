@@ -1,4 +1,4 @@
-import { errorMessage } from '../constants/constants';
+import { errorMessage } from '../constants/errorMessage';
 
 export default class GroupController {
     constructor(model, view) {

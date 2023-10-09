@@ -1,5 +1,5 @@
 import { API_BASE_URL, PATH } from '../constants/urls';
-import { errorMessage } from '../constants/constants';
+import { errorMessage } from '../constants/errorMessage';
 
 export default class ApisClient {
     sendRequest = async (path, method, body) => {

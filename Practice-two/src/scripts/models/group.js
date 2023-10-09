@@ -8,6 +8,7 @@ export default class Group {
 
     init = async () => {
         this.groupList = await this.ApisClient.getGroup();
+        console.log(this.groupList[1].title);
     };
 
     getGroupList = () => {
@@ -17,5 +18,9 @@ export default class Group {
     addGroup = async (data) => {
         await this.ApisClient.postItem(data);
         this.groupList.push(data);
+    };
+    renameGroup = async (id, data) => {
+        await this.ApisClient.patchItem(id, data);
+        this.groupList[id].title = data;
     };
 }
