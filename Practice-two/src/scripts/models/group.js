@@ -16,4 +16,8 @@ export default class Group {
         await this.ApisClient.postItem(data);
         this.groupList.push(data);
     };
+    renameGroup = async (id, data) => {
+        await this.ApisClient.patch(id, data);
+        this.groupList[id].title = data;
+    };
 }

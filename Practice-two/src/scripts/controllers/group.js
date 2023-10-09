@@ -23,6 +23,7 @@ export default class GroupController {
     loadGroupList = () => {
         try {
             const data = this.model.group.getGroupList();
+            console.log(data);
             this.view.group.renderGroupList(data);
         } catch {
             alert(errorMessage.RENDER_GROUP_LIST);
@@ -30,6 +31,7 @@ export default class GroupController {
     };
     addGroupList = async (data) => {
         try {
+            await this.model.group.addGroup(data);
             this.view.group.displayGroupList(data);
         } catch {
             alert(errorMessage.ADD_GROUP);
