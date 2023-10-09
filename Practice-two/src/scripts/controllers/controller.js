@@ -1,30 +1,12 @@
-import { errorMessage } from '../constants/constant';
+import GroupController from '../controllers/group';
 
-class Controller {
+export default class Controller {
     constructor(model, view) {
         this.model = model;
         this.view = view;
+        this.groupController = new GroupController(this.model, this.view);
     }
-    init = async () => {
-        await this.initGroup();
-    };
-
-    initGroup = async () => {
-        try {
-            await this.model.group.init();
-        } catch {
-            alert(errorMessage.INIT_GROUP_LIST);
-        }
-        this.loadGroupList();
-    };
-
-    loadGroupList = () => {
-        try {
-            const data = this.model.group.getGroupList();
-            this.view.renderGroupList(data);
-        } catch {
-            alert(errorMessage.RENDER_GROUP_LIST);
-        }
+    init = () => {
+        this.groupController.init();
     };
 }
-export default Controller;

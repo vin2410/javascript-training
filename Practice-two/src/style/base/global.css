@@ -4,8 +4,7 @@ body {
 }
 
 .container {
-    width: auto;
-    height: auto;
+    width: 100%;
 }
 
 .main-page {

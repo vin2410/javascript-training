@@ -4,16 +4,21 @@
     height: 100vh;
 }
 
+.group {
+    height: 80%;
+    overflow-y: scroll;
+}
+
 .side-bar-addlist {
     display: grid;
     grid-template-columns: 20% auto 20%;
     position: fixed;
+    left: 0;
     bottom: 0;
-    color: var(--color-text-primary);
 }
 
 .group-item__list,
-.group-item {
+.group-item__title {
     display: flex;
     align-items: center;
     padding: 12px 24px;
@@ -25,8 +30,4 @@
 
 .group-item__list:hover {
     background-color: var(--color-bg-primary);
-}
-
-.group-item {
-    cursor: pointer;
 }

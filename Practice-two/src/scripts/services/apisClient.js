@@ -1,4 +1,5 @@
 import { API_BASE_URL, PATH } from '../constants/urls';
+import { errorMessage } from '../constants/errorMessage';
 
 export default class ApisClient {
     sendRequest = async (path, method, body) => {
@@ -13,11 +14,11 @@ export default class ApisClient {
         if (response.ok) {
             return await response.json();
         } else {
-            throw new Error('Error while sending request');
+            throw new Error(errorMessage.REQUEST_ERROR);
         }
     };
     // Get method
-    getGroup = async () => {
+    getItem = async () => {
         return await this.sendRequest(`${PATH}`, 'GET');
     };
 
