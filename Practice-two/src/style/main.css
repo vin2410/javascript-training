@@ -14,4 +14,5 @@
 /* layouts */
 @import url(./layout/left-column.css);
 @import url(./layout/center-column.css);
-@import url(./layout/contextMenu.css);
+@import url(./layout/context-menu.css);
+@import url(./layout/modal-delete.css);

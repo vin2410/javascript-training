@@ -17,17 +17,17 @@
     bottom: 0;
 }
 
-.group-item__list,
-.group-item__title {
+.group-list,
+.group-title {
     display: flex;
     align-items: center;
     padding: 12px 24px;
 }
 
-.group-item__list {
+.group-list {
     margin-left: 22px;
 }
 
-.group-item__list:hover {
+.group-list:hover {
     background-color: var(--color-bg-primary);
 }

@@ -4,8 +4,14 @@ export default class GroupView {
     constructor() {
         this.groupTemplate = new GroupTemplate();
         this.groupListEl = document.querySelector('.group');
-        this.groupItem = document.querySelector('.group-item');
+        this.groupTitle = document.getElementsByClassName('group-title__input');
         this.addGroupBtn = document.querySelector('.icon-folder-plus');
+
+        this.deleteContextMenu = document.getElementsByClassName('contextMenu-delete');
+
+        this.formConfirmDelte = document.querySelector('.form-delete');
+        this.cofirmButton = document.querySelector('.delete-button');
+        this.cancleButton = document.querySelector('.cancle-button');
     }
 
     renderGroupList = (groups) => {
@@ -20,10 +26,10 @@ export default class GroupView {
             e.preventDefault;
             alert('click success');
             const groupValue = {
-                title: '',
+                title: 'UntitledGroup',
                 lists: [
                     {
-                        name: '',
+                        name: 'UntitledList',
                         tasks: [],
                     },
                 ],
@@ -35,5 +41,46 @@ export default class GroupView {
     displayGroupList = (group) => {
         const data = this.groupTemplate.renderGroup(group);
         this.groupListEl.innerHTML += data;
+    };
+
+    deleteGroupView = (dataId, deleteGroup) => {
+        this.cofirmButton.addEventListener("click", (e) => {
+            this.showDeleteModal();
+            e.preventDefault;
+            console.log(this.groupListEl)
+            deleteGroup(dataId)
+        })
+        this.cancleButton.addEventListener("click", (e) => {
+            e.preventDefault;
+            this.hideDeleteModal();
+        })
+    }
+
+    handleRightClick = () => {
+        let menu = document.querySelector('.contextMenu');
+        const inputs = Array.from(this.groupTitle);
+        inputs.forEach((input) => {
+            input.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+                menu.style.display = 'block';
+                menu.style.top = e.y + 'px';
+                menu.style.left = e.x + 'px';
+                const dataId = input.dataset.id;
+                console.log(dataId);
+                console.log(this.deleteContextMenu);
+                this.deleteContextMenu.addEventListener('click', this.deleteGroupView(dataId));
+            });
+        });
+        document.addEventListener('click', () => {
+            menu.style.display = 'none';
+        });
+    };
+
+    showDeleteModal = () => {
+        this.formConfirmDelte.classList.remove('hidden');
+    };
+
+    hideDeleteModal = () => {
+        this.formConfirmDelte.classList.add('hidden');
     };
 }

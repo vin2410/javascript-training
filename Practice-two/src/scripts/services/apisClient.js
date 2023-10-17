@@ -1,5 +1,5 @@
 import { API_BASE_URL, PATH } from '../constants/urls';
-import { errorMessage } from '../constants/constants';
+import { errorMessage } from '../constants/errorMessage';
 
 export default class ApisClient {
     sendRequest = async (path, method, body) => {
@@ -21,6 +21,11 @@ export default class ApisClient {
     getGroup = async () => {
         return await this.sendRequest(`${PATH}`, 'GET');
     };
+
+    //  Get by id
+    GetItemById = async (id) => {
+        return await this.sendRequest(`${PATH}/${id}`, 'GET');
+    }
 
     // Post method
     postItem = async (data) => {

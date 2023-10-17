@@ -1,4 +1,4 @@
-import { errorMessage } from '../constants/constants';
+import { errorMessage } from '../constants/errorMessage';
 
 export default class GroupController {
     constructor(model, view) {
@@ -18,12 +18,15 @@ export default class GroupController {
         }
         this.loadGroupList();
         this.view.group.addGroupView(this.addGroupList);
+        this.view.group.handleRightClick();
+        this.view.group.deleteGroupView(this.deleteGroup);
+        // this.view.group.renameGroup(this.editGroup());
+        // this.view.group.deleteGroupView(this.deleteGroup);
     };
 
     loadGroupList = () => {
         try {
             const data = this.model.group.getGroupList();
-            console.log(data);
             this.view.group.renderGroupList(data);
         } catch {
             alert(errorMessage.RENDER_GROUP_LIST);
@@ -37,4 +40,13 @@ export default class GroupController {
             alert(errorMessage.ADD_GROUP);
         }
     };
+    
+    deleteGroup = async (id) => {
+        try {
+            await this.model.group.deleteGroup(id);
+            console.log(this.view.group.deleteGroupView())
+        }catch {
+            alert(errorMessage.DELETE_GROUP);
+        }
+    }
 }
