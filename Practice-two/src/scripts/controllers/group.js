@@ -40,13 +40,13 @@ export default class GroupController {
             alert(errorMessage.ADD_GROUP);
         }
     };
-    
+
     deleteGroup = async (id) => {
         try {
             await this.model.group.deleteGroup(id);
-            console.log(this.view.group.deleteGroupView())
-        }catch {
+            console.log(this.view.group.deleteGroupView());
+        } catch {
             alert(errorMessage.DELETE_GROUP);
         }
-    }
+    };
 }

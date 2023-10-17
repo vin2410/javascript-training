@@ -44,17 +44,18 @@ export default class GroupView {
     };
 
     deleteGroupView = (dataId, deleteGroup) => {
-        this.cofirmButton.addEventListener("click", (e) => {
-            this.showDeleteModal();
+        this.showDeleteModal();
+        console.log(dataId);
+        this.cofirmButton.addEventListener('click', (e) => {
             e.preventDefault;
-            console.log(this.groupListEl)
-            deleteGroup(dataId)
-        })
-        this.cancleButton.addEventListener("click", (e) => {
+            console.log(this.groupListEl);
+            deleteGroup(dataId);
+        });
+        this.cancleButton.addEventListener('click', (e) => {
             e.preventDefault;
             this.hideDeleteModal();
-        })
-    }
+        });
+    };
 
     handleRightClick = () => {
         let menu = document.querySelector('.contextMenu');
@@ -66,9 +67,10 @@ export default class GroupView {
                 menu.style.top = e.y + 'px';
                 menu.style.left = e.x + 'px';
                 const dataId = input.dataset.id;
-                console.log(dataId);
-                console.log(this.deleteContextMenu);
-                this.deleteContextMenu.addEventListener('click', this.deleteGroupView(dataId));
+                document.getElementById('delete').addEventListener('click', (e) => {
+                    e.preventDefault;
+                    this.deleteGroupView(dataId);
+                });
             });
         });
         document.addEventListener('click', () => {
