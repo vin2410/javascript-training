@@ -22,6 +22,11 @@ export default class ApisClient {
         return await this.sendRequest(`${PATH}`, 'GET');
     };
 
+    //  Get by id
+    GetItemById = async (id) => {
+        return await this.sendRequest(`${PATH}/${id}`, 'GET');
+    }
+
     // Post method
     postItem = async (data) => {
         return await this.sendRequest(`${PATH}`, 'POST', data);

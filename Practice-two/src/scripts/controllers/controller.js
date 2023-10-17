@@ -1,5 +1,8 @@
 import GroupController from '../controllers/group';
+<<<<<<< HEAD
 
+=======
+>>>>>>> demo
 export default class Controller {
     constructor(model, view) {
         this.model = model;

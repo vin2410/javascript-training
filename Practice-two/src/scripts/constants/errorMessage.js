@@ -4,4 +4,6 @@ export const errorMessage = {
     INIT_GROUP_LIST: "Couldn't initialize group ",
     RENDER_GROUP_LIST: "Couldn't render group ",
     ADD_GROUP: "Couldn't add group ",
+    EDIT_GROUP: "Couldn't edit group ",
+    DELETE_GROUP: "Couldn't delete group ",
 };

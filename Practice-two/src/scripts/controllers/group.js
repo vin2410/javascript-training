@@ -18,6 +18,10 @@ export default class GroupController {
         }
         this.loadGroupList();
         this.view.group.addGroupView(this.addGroupList);
+        this.view.group.handleRightClick();
+        this.view.group.deleteGroupView(this.deleteGroup);
+        // this.view.group.renameGroup(this.editGroup());
+        // this.view.group.deleteGroupView(this.deleteGroup);
     };
 
     loadGroupList = () => {
@@ -30,10 +34,19 @@ export default class GroupController {
     };
     addGroupList = async (data) => {
         try {
-            this.model.group.addGroup(data);
-            await this.view.group.displayGroupList(data);
+            await this.model.group.addGroup(data);
+            this.view.group.displayGroupList(data);
         } catch {
             alert(errorMessage.ADD_GROUP);
         }
     };
+    
+    deleteGroup = async (id) => {
+        try {
+            await this.model.group.deleteGroup(id);
+            console.log(this.view.group.deleteGroupView())
+        }catch {
+            alert(errorMessage.DELETE_GROUP);
+        }
+    }
 }
