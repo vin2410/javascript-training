@@ -14,7 +14,7 @@
     "devDependencies": {
         "eslint": "^8.49.0",
         "parcel": "^2.9.3",
-        "prettier": ""
+        "prettier": "^10.1.0"
     },
     "main": ".eslintrc.js",
     "dependencies": {
