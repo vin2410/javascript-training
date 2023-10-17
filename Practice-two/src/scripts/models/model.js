@@ -1,7 +1,7 @@
-import Group from './group';
+import GroupModel from "./group";
 
 export default class Model {
     constructor() {
-        this.group = new Group();
+        this.group = new GroupModel();
     }
 }

@@ -1,6 +1,6 @@
 import ApisClient from '../services/apisClient';
 
-export default class Group {
+export default class GroupModel {
     constructor() {
         this.ApisClient = new ApisClient();
         this.groupList;
